@@ -1,25 +1,15 @@
-
 # User input for amount of terms
-print("Input number of terms:")
-r = input()
+numTerms = int(input("Input number of terms: "))
 
 # Create list for all terms
-s = []
+allTerms = []
 
 # Calculate the terms and place them in the list
-for n in range(r):
-    a = float(-1) ** n
-    b = float(2) * n + float(1)
-    c = a / b
-    s.append(c)
+for n in range(numTerms):
+    allTerms.append((float(-1) ** n) / (float(2) * n + float(1)))
 
 # Sum all terms and multiply by 4
-pd = sum(s)
-pi = pd * 4
-
-# Convert the result into a string
-pistr = str(pi)
-rstr = str(r)
+pi = sum(allTerms) * 4
 
 # Display the result
-print "Estimation: " + pistr + " (" + rstr + " terms)"
+print(f'Estimation: {pi} ({numTerms} terms)')
